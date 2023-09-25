@@ -151,6 +151,20 @@ Main color: #e0c1b6;
     background-position: center;
 }
 
+.cover5 {
+    background-image: url(../multi/Cover5.jpeg); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la URL o ruta de tu imagen de fondo */
+    background-size: cover; /* Esto ajusta automáticamente el tamaño de la imagen para que cubra todo el div */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center;
+}
+
+.cover6 {
+    background-image: url(../multi/Cover6.jpeg); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la URL o ruta de tu imagen de fondo */
+    background-size: cover; /* Esto ajusta automáticamente el tamaño de la imagen para que cubra todo el div */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center;
+}
+
 .contenedor-secundario-port a {
     text-decoration: none; /* Elimina el subrayado */
     color: #fff; /* Cambia el color del texto a negro */
