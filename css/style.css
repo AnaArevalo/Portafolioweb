@@ -144,9 +144,42 @@ Main color: #e0c1b6;
     background-position: center;
 }
 
+.cover4 {
+    background-image: url(../multi/Cover4.jpeg); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la URL o ruta de tu imagen de fondo */
+    background-size: cover; /* Esto ajusta automáticamente el tamaño de la imagen para que cubra todo el div */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center;
+}
+
 .contenedor-secundario-port a {
     text-decoration: none; /* Elimina el subrayado */
     color: #fff; /* Cambia el color del texto a negro */
+}
+
+
+/* Estilo para los enlaces */
+.links-hover {
+    text-decoration: none; /* Elimina la decoración predeterminada de los enlaces */
+    position: relative; /* Permite agregar un elemento secundario absoluto */
+}
+
+/* Estilo para la línea que aparecerá en hover */
+.links-hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: blanchedalmond; /* Color de la línea (puedes cambiarlo) */
+    height: 2px; /* Grosor de la línea */
+    transform: scaleX(0); /* Inicialmente, la línea no será visible */
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out; /* Efecto de animación */
+}
+
+/* Estilo de hover para la línea */
+.links-hover:hover::before {
+    transform: scaleX(1); /* La línea se expandirá horizontalmente al 100% en hover */
 }
 
 
