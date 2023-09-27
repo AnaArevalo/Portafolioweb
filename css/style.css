@@ -2,9 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: #a68f87;
     font-family: "Century Gothic", sans-serif;
+    background-color: #a68f87;
 }
+
+
 
 /*INDEX*/
 
@@ -15,53 +17,36 @@
 
 .img-container {
     display: flex;
-    justify-content: center; 
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
-.img-main {
-    width: 25%;
+
+
+.text-banner {
+    font-size: 25px;
+    font-family: "Century Gothic", sans-serif;
 }
 
 .navbar .nav-link {
     color: #fff;
 }
 
-
-.carousel-inner .carousel-caption {
-    background-color: rgba(0, 0, 0, 0) !important;
-    border: none !important;
-    box-shadow: none !important;
+.img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
+    .img-main {
+        height: auto;
+        width: 30rem; 
+    }
+    
 
-
-
-.carousel-control-prev, .carousel-control-next {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-/* Cambia el color de los indicadores a negro */
-.carousel-indicators .active {
-    background-color: black !important;
-}
-
-/* Cambia el color y aumenta el tamaño de las flechas del carrusel */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    color: #000 !important; 
-    font-size: 40px !important; 
-}
-
-
-/*Clase para ocultar el relleno del texto de las slides*/
-.hachecinco {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    color: black;
-}
+    .text-banner{
+        background-color: #a68f87;
+    }
 
 /* Estilo para el hover de los enlaces */
 .navbar-nav .nav-link {
@@ -84,12 +69,51 @@
     width: 100%;
 }
 
-/* Estilos para pantallas de celular */
-@media screen and (max-width: 767px) {
-    .hachecinco {
-        display: none;
+.footer {
+    text-align: center;
+    padding-top: 5%;
+    font-size: 12px;
+}
+
+/* Estilos para tabletas */
+@media (max-width: 768px) {
+    .img-container {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 20px; /* Ajusta el valor según tus necesidades */
+    }
+
+    .img-main {
+        width: 100%;  
+    }
+    .img-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .text-banner {
+        font-size: 30px; 
     }
 }
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 576px) {
+
+    .img-container {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 20px; /* Ajusta el valor según tus necesidades */
+    }
+
+    .img-main {
+        width: 100%; 
+    }
+    .text-banner {
+        font-size: 25px; 
+    }
+}
+
+
+
 
 
 /*PORTFOLIO*/
@@ -209,45 +233,51 @@ h1.effect-shine:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: blanchedalmond; /* Color de la línea (puedes cambiarlo) */
-    height: 2px; /* Grosor de la línea */
-    transform: scaleX(0); /* Inicialmente, la línea no será visible */
+    background-color: blanchedalmond;
+    height: 2px; 
+    transform: scaleX(0); 
     transform-origin: center;
-    transition: transform 0.3s ease-in-out; /* Efecto de animación */
+    transition: transform 0.3s ease-in-out; 
 }
 
 /* Estilo de hover para la línea */
 .links-hover:hover::before {
-    transform: scaleX(1); /* La línea se expandirá horizontalmente al 100% en hover */
-}
-
-/* Estilos para pantallas de celular */
-@media screen and (max-width: 767px) {
-    /* Reducir el tamaño de fuente para los elementos con la clase .links-hover */
-    .links-hover {
-        font-size: 15px; 
-    }
-
-    /* Ajustar la altura del contenedor secundario en función del tamaño de fuente */
-    .contenedor-secundario-port {
-        height: 2.5em; 
-        line-height: 2.5em; 
-    }
+    transform: scaleX(1); 
 }
 
 /* Estilos para tabletas */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Ajusta aquí tus estilos para tabletas */
-    .links-hover {
-        font-size: 20px; /* Tamaño de fuente para tabletas */
+@media (min-width: 577px) and (max-width: 991px) {
+    
+    .title-port {
+        font-size: 35px; 
     }
 
-    /* Ajustar la altura del contenedor secundario en función del tamaño de fuente */
     .contenedor-secundario-port {
-        height: 3em; /* Ajusta el valor según el tamaño de fuente */
-        line-height: 3em; /* Ajusta el valor según el tamaño de fuente */
+        width: 80%; 
+        font-size: 25px; 
+        height: 180px; 
+        line-height: 180px; 
+        margin-bottom: 10px; 
     }
 }
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 576px) {
+    /* Redefine el tamaño del texto para dispositivos móviles */
+    .title-port {
+        font-size: 20px; /* Ajusta el tamaño del título según tus necesidades */
+        margin-bottom: 10px; /* Reduce el espacio inferior del título */
+    }
+
+    .contenedor-secundario-port {
+        width: 90%; 
+        font-size: 21px; 
+        height: 150px; 
+        line-height: 150px; 
+        margin-bottom: 5px;
+    }
+}
+
 
 
 /*SOBRE MI*/
@@ -326,49 +356,96 @@ h1.effect-shine:hover {
     height: 50%;
 }
 
-
-/* Estilos para pantallas de celular */
-@media screen and (max-width: 767px) {
-    /* Centrar el texto */
-    .container-uno {
-        text-align: center;
-        width: 100%; /* Ancho del 100% para ocupar todo el ancho de la pantalla */
-        margin-left: 0; /* Eliminar margen izquierdo */
-        margin-right: 0; /* Eliminar margen derecho */
-    }
-
-    /* Estilos para el formulario */
-    .container-dos {
-        width: 100%; /* Ancho del 100% para ocupar todo el ancho de la pantalla */
-        margin-right: 0; /* Eliminar margen derecho */
-        margin-left: 0; /* Eliminar margen izquierdo */
-        padding: 10px; /* Agregar espacio alrededor del formulario */
-    }
-
-    /* Cambiar el flujo a una columna */
+/* Estilos para tabletas */
+@media (min-width: 577px) and (max-width: 991px) {
     .main-container {
-        flex-direction: column;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .container-uno {
+        width: 80%; 
+        margin: 0 auto; 
+    }
+
+    .container-dos {
+        width: 80%; 
+        margin: 0 auto; 
+    }
+
+    .foto-sm {
+        width: 100%; 
+        margin-bottom: 5%; 
+    }
+
+    .title-sm {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .text-sm {
+        text-align: justify;
+        font-size: 18px; 
+    }
+
+    .icons-sm {
+        text-align: center;
+    }
+
+    .fa-brands, .fa-regular {
+        font-size: 30px; 
+        margin: 10px;
+    }
+
+    .ilustracion {
+        height: auto; 
+        margin-top: 20px; 
     }
 }
 
-/* Estilos para tabletas (nueva media query similar a la de dispositivos móviles) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Reutiliza los estilos que tenías para dispositivos móviles */
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 576px) {
+    .main-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
     .container-uno {
-        text-align: center;
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        width: 90%; 
+        margin: 0 auto; 
     }
 
     .container-dos {
-        width: 100%;
-        margin-right: 0;
-        margin-left: 0;
-        padding: 10px;
+        width: 90%; 
+        margin: 0 auto;
     }
 
-    .main-container {
-        flex-direction: column;
+    .foto-sm {
+        width: 100%; 
+        margin-bottom: 5%; 
     }
+    
+    .title-sm {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .text-sm {
+        text-align: justify;
+        font-size: 16px; 
+    }
+    
+    .icons-sm {
+        text-align: center;
+    }
+    
+    .fa-brands, .fa-regular {
+        font-size: 30px; 
+        margin: 10px;
+    }
+
+    .ilustracion {
+        height: auto;
+        margin-top: 20px; 
 }
