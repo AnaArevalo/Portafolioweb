@@ -124,11 +124,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .gutter-v1 {
   margin-right: -20px;
   margin-left: -20px; }
+
+
   @media (max-width: 991.98px) {
 
-    .logo-mobile {
+  .logo-mobile {
       display: none;
-    }
+  }
+
     
     .gutter-v1 {
       margin-left: -15px;
