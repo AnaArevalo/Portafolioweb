@@ -165,6 +165,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       display: none;
   }
 
+  .botonera-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .botonera-container .btn.btn-primary {
+    padding: 13px;
+    font-size: 19px;
+  }
+
     
     .gutter-v1 {
       margin-left: -15px;
