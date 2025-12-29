@@ -129,15 +129,111 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
         height: auto;
       }
 
-    .botonera-container {
-      width: 100%;
-      height: 20vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 80px;
-      
-    }
+/* Botón central de WhatsApp */
+.btn-whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #25D366;
+  color: #ffffff;
+  padding: 18px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 2px solid #25D366;
+  transition: .3s all ease;
+}
+
+.btn-whatsapp-cta:hover {
+  background: transparent;
+  color: #25D366;
+  border-color: #25D366;
+}
+
+.btn-whatsapp-cta .whatsapp-icon-cta {
+  width: 28px;
+  height: 28px;
+}
+
+#whatsapp-cta {
+  padding: 5rem 0;
+}
+
+/* Sección Servicios */
+#services-section {
+  background-color: #f8f9fa;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: .3s all ease;
+  border: 1px solid #efefef;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.service-card .service-icon {
+  margin-bottom: 20px;
+}
+
+.service-card .service-icon img {
+  width: 60px;
+  height: 60px;
+}
+
+.service-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Sección Portfolio */
+#portfolio-section {
+  background-color: #ffffff;
+}
+
+#portfolio-section .portfolio-wrapper {
+  margin-top: 20px;
+}
+
+.isotope-mb-2 {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 767.98px) {
+  .btn-whatsapp-cta {
+    padding: 15px 25px;
+    font-size: 16px;
+  }
+  
+  .btn-whatsapp-cta .whatsapp-icon-cta {
+    width: 24px;
+    height: 24px;
+  }
+  
+  #whatsapp-cta {
+    padding: 3rem 0;
+  }
+  
+  .service-card {
+    padding: 30px 20px;
+  }
+}
 
 .form-control, .custom-select {
   border: none;
@@ -164,17 +260,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .logo-mobile {
       display: none;
   }
-
-  .botonera-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .botonera-container .btn.btn-primary {
-    padding: 13px;
-    font-size: 19px;
-  }
-
     
     .gutter-v1 {
       margin-left: -15px;
@@ -1127,20 +1212,6 @@ figure.dotted-bg {
   font-weight: 700;
   color: #000000; }
 
-#map {
-  position: relative; }
-  #map iframe {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    min-height: 400px;
-    height: 100%;
-    position: absolute; }
-    @media (max-width: 991.98px) {
-      #map iframe {
-        position: relative; } }
 
 .post-entry .thumb {
   display: block;
