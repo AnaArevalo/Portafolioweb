@@ -115,6 +115,35 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       .btn-descarga {
         border: 2px solid white;
         color: white;
+        background: transparent;
+        padding: 15px 35px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-descarga::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .btn-descarga:hover {
+        background: white;
+        color: #9d6da5;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-descarga:hover::before {
+        left: 100%;
       }
 
       .whatsapp-btn {
@@ -122,11 +151,30 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
         bottom: 20px; 
         right: 20px; 
         z-index: 1000;
+        animation: pulse-whatsapp 2s infinite;
       }
 
       .whatsapp-btn img {
         width: 50px; 
         height: auto;
+        filter: drop-shadow(0 4px 15px rgba(37, 211, 102, 0.4));
+        transition: transform 0.3s ease;
+      }
+
+      .whatsapp-btn:hover img {
+        transform: scale(1.15);
+      }
+
+      @keyframes pulse-whatsapp {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
 
 /* Botón central de WhatsApp */
@@ -134,20 +182,38 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: #25D366;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: #ffffff;
   padding: 18px 32px;
   font-size: 18px;
   font-weight: 600;
   border-radius: 50px;
-  border: 2px solid #25D366;
-  transition: .3s all ease;
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-whatsapp-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
 }
 
 .btn-whatsapp-cta:hover {
-  background: transparent;
-  color: #25D366;
-  border-color: #25D366;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.45);
+  color: #ffffff;
+}
+
+.btn-whatsapp-cta:hover::before {
+  left: 100%;
 }
 
 .btn-whatsapp-cta .whatsapp-icon-cta {
@@ -167,17 +233,35 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .service-card {
   background: #ffffff;
   padding: 40px 30px;
-  border-radius: 10px;
+  border-radius: 16px;
   text-align: center;
-  transition: .3s all ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 1px solid #efefef;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #9d6da5, #b88a91, #a68f87);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary-color);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(157, 109, 165, 0.2);
+  border-color: transparent;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
 }
 
 .service-card .service-icon {
@@ -1270,13 +1354,18 @@ figure.dotted-bg {
 #about-section {
   margin-top: 7rem; }
   #about-section .container {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, #9d6da5 0%, #b88a91 50%, #a68f87 100%);
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 50px;
-    padding-right: 50px; }
+    padding-right: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(157, 109, 165, 0.3);
+    position: relative; }
     #about-section .container .author-wrap {
-      margin-top: -150px; }
+      margin-top: -150px;
+      position: relative;
+      z-index: 2; }
 
 .grid-item {
   position: relative; }
@@ -1792,4 +1881,40 @@ figure.dotted-bg {
         .texto-grande {
           font-size: 20px;
           color: #fff;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          line-height: 1.8;
+        }
+
+        /* Mejora foto de perfil */
+        #about-section .author-wrap img {
+          border: 4px solid rgba(255, 255, 255, 0.9);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        #about-section .author-wrap img:hover {
+          transform: scale(1.05);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Efecto sutil en títulos del hero */
+        .heading strong {
+          background: linear-gradient(135deg, #000 0%, #333 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        /* Wave animada */
+        .wave svg path {
+          animation: wave-draw 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes wave-draw {
+          0% {
+            stroke-dashoffset: 0;
+          }
+          100% {
+            stroke-dashoffset: 50;
+          }
         }
